@@ -24,13 +24,13 @@ This plugin solves the issue of ACF text and textarea fields breaking when typin
 1. Upload the `acf-html-input-handler` folder to the `/wp-content/plugins/` directory
 
 - Your Installation folder should look like the following
-
+```
 acf-html-input-handler/
 ├── acf-html-input-handler.php
 ├── README.md
 └── js/
     └── acf-html-input-handler.js
-
+```
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 ## Usage
