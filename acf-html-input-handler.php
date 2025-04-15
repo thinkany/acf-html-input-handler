@@ -3,7 +3,7 @@
 Plugin Name: ACF HTML Input Handler
 Plugin URI: https://github.com/thinkany/acf-html-input-handler
 Description: Prevents ACF field updates when typing HTML tags in plain text fields to avoid 'InvalidCharacterError' within the Gutenberg editor
-Version: 1.0.26
+Version: 1.0.27
 Author: thinkany
 Author URI: https://thinkany.co
 License: GPL v2 or later
