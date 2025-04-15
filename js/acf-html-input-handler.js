@@ -1,21 +1,28 @@
 (function ($) {
-    if (typeof acf === "undefined") {
-        return;
+    // Wait for both ACF and Gutenberg to be ready
+    function waitForAcf() {
+        if (typeof acf === "undefined" || !acf.field || !acf.field.Tab) {
+            setTimeout(waitForAcf, 100);
+            return;
+        }
+
+        // Wait for Gutenberg to be ready
+        if (window.wp && wp.data && wp.data.subscribe) {
+            const unsubscribe = wp.data.subscribe(() => {
+                const isEditorReady = wp.data.select('core/editor') !== null;
+                if (isEditorReady) {
+                    unsubscribe();
+                    initializePreviewDelay();
+                }
+            });
+        } else {
+            // Fallback for non-Gutenberg contexts
+            initializePreviewDelay();
+        }
     }
 
-    // Wait for Gutenberg to be ready
-    if (window.wp && wp.data && wp.data.subscribe) {
-        const unsubscribe = wp.data.subscribe(() => {
-            const isEditorReady = wp.data.select('core/editor') !== null;
-            if (isEditorReady) {
-                unsubscribe();
-                initializePreviewDelay();
-            }
-        });
-    } else {
-        // Fallback for non-Gutenberg contexts
-        initializePreviewDelay();
-    }
+    // Start waiting for ACF
+    waitForAcf();
 
     function initializePreviewDelay() {
         // Track HTML typing state globally

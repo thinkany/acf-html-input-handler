@@ -41,3 +41,6 @@ Once activated, the plugin works automatically with any ACF text or textarea fie
 
 ### 1.0.25
 - Initial release
+
+### 1.0.26
+- Bug Fix for removing Tab Fields

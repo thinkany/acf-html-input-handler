@@ -3,7 +3,7 @@
 Plugin Name: ACF HTML Input Handler
 Plugin URI: https://github.com/thinkany/acf-html-input-handler
 Description: Prevents ACF field updates when typing HTML tags in plain text fields to avoid 'InvalidCharacterError' within the Gutenberg editor
-Version: 1.0.25
+Version: 1.0.26
 Author: thinkany
 Author URI: https://thinkany.co
 License: GPL v2 or later
@@ -29,8 +29,8 @@ function acf_html_input_handler_enqueue_scripts() {
     wp_enqueue_script(
         'acf-html-input-handler',
         plugin_dir_url(__FILE__) . 'js/acf-html-input-handler.js',
-        ['jquery', 'acf-input', 'wp-blocks', 'wp-element', 'wp-editor', 'acf-field-group'],
-        '1.0.0',
+        ['jquery', 'wp-blocks', 'wp-element', 'wp-editor'],
+        '1.0.26',
         true
     );
 }
