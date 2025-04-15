@@ -8,7 +8,10 @@ This plugin solves the issue of ACF text and textarea fields breaking when typin
 - Preventing automatic updates while HTML is being typed
 - Allowing normal updates for plain text content (preview occurs as it normally would)
 - Updating the preview of fields containing HTML will only happen once the field loses focus (clicked away from)
-- HTML Content Example: <span>copy content</span> or <br> etc.
+- HTML Content Example: 
+```
+<span>copy content</span> or <br> etc.
+```
 - If a field has HTML within the text value, upon removal of the HTML the preview update will occur when the field loses focus (clicked away from)
 
 ## Requirements
